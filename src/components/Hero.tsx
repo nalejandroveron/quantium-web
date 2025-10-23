@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-
 export function Hero() {
   return (
     <div className="bg-gray-900">

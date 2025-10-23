@@ -18,7 +18,7 @@ export function Hero() {
         </nav>
       </header>
 
-      <div className="relative isolate overflow-hidden pt-14">
+      <div className="relative isolate overflow-hidden">
         <video
           src="bg.mp4"
           autoPlay
@@ -39,13 +39,14 @@ export function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
-        <div className="mx-auto h-screen max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto h-screen flex items-center justify-center max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
-              <h1 className="text-2xl font-semibold tracking-tight text-balance sm:text-6xl text-white">
+              <img src="quantium-logo-removebg.png" alt="Quantium Logo" className="mx-auto h-26 w-auto mb-6" />
+              <h1 className="text-2xl font-semibold tracking-tight text-balance sm:text-5xl text-white">
                 Aprende a operar los mercados como un profesional
               </h1>
-              <p className="mt-8 text-lg font-medium text-pretty sm:text-xl/8 text-gray-400">
+              <p className="mt-8 text-lg font-medium text-pretty sm:text-lg text-gray-400">
                 Comprende como la presión de las opciones y los Market Maker afectan los movimientos de los precios y cómo puedes aprovechar esta información para mejorar tus operaciones.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">

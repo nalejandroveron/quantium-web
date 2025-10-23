@@ -9,7 +9,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nalejandroveron.github.io/',
-  base: '/quantium-web',
+  // base: '/quantium-web',
 
   vite: {
     plugins: [tailwindcss()],

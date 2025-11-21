@@ -1,10 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import nicoCortez from "../assets/staff/nico_cortez.jpeg";
+import hunabVillanueva from "../assets/staff/hunab_villanueva.png";
 import mauricioOchoa from "../assets/staff/mauricio_ochoa.jpeg";
 import victorValiente from "../assets/staff/victor_valiente.jpeg";
 
 const staff = [
+  {
+    name: "Hunab Villanueva",
+    img: hunabVillanueva,
+    desc: String.raw`
+Hunab Villanueva — Trader Institucional, Mentor Cuantitativo & Especialista en Modelos Operativos
+
+Hunab Villanueva inició su camino en los mercados financieros en 2019, impulsado por la necesidad de entender cómo se mueve realmente el capital en un sistema dominado por instituciones, algoritmos y flujos no visibles para el público general. Sus primeros años en los futuros de criptomonedas le dieron una base sólida de disciplina, gestión del riesgo y adaptación a la volatilidad, habilidades que luego llevaría al siguiente nivel en mercados más complejos.
+
+En 2020 profundizó su formación en futuros con cursos de la CME y mentoría directa de Tom B., trader institucional con más de cuarenta años de experiencia, quien le transmitió la lectura profesional del order flow, la interpretación de la liquidez real y el uso avanzado de herramientas como Bookmap. Esta etapa marcó su comprensión del mercado desde la microestructura, donde se revela la verdadera intención del dinero.
+
+En 2021 avanzó hacia la ingeniería estadística y el análisis cuantitativo aplicado a derivados, incorporando elementos que transformaron su enfoque: volatilidad, Dark Pools, flujos OTC, griegas y estructuras probabilísticas. Ese mismo año se formó bajo la guía de Brent Kochuba (CEO de SpotGamma), ampliando su visión institucional y su entendimiento de los flujos de opciones a un nivel profesional.
+
+Entre 2023 y 2025 integró toda su experiencia operando CFDs, futuros y opciones, desarrollando modelos estadísticos, análisis con data de nivel 3 y metodologías cuantitativas orientadas a entender cómo interactúa el capital institucional en distintos regímenes de mercado. Esto lo llevó a especializarse en la creación y optimización de modelos operativos cuantitativos, diseñados para adaptarse a contextos reales y ofrecer ventajas probabilísticas sostenibles.
+
+Hoy, Hunab se destaca como Trader institucional, formador y especialista en modelos operativos, liderando procesos de inversión, gestión de portafolios, educación financiera y desarrollo de sistemas cuantitativos. Su enfoque une visión institucional, análisis estadístico, comprensión estructural del mercado y una pedagogía clara basada en datos y transparencia.
+
+Para Hunab, los mercados no se adivinan:
+se modelan, se interpretan y se entienden desde su estructura interna.
+Esa es la base de cualquier ventaja estadística profesional, sostenible y escalable.`,
+  },
   {
     name: "Victor Valiente",
     img: victorValiente,
@@ -53,7 +74,9 @@ const staff = [
                   <h3 class="mt-3 text-3xl font-semibold text-white group-hover:text-gray-300">
                     {item.name}
                   </h3>
-                  <p class="mt-5 text-sm/6 text-gray-400">{item.desc}</p>
+                  <p class="mt-5 text-sm/6 text-gray-400">
+                    <span class="whitespace-pre-wrap">{item.desc.trim()}</span>
+                  </p>
                 </div>
               </div>
             </article>

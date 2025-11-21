@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+const images = Object.values(
+  import.meta.glob<{ default: ImageMetadata }>(
+    "../assets/testimonials/*.{jpeg,jpg,png,gif}"
+  )
+);
+---
+
+<section class="py-24 sm:py-32 w-full bg-gray-900">
+  <div
+    class="flex flex-row flex-wrap justify-center gap-5 px-32 min-w-0 w-full"
+  >
+    {
+      Object.entries(images).map(async ([_path, image], index) => {
+        const { default: imageData } = await image();
+        return (
+          <a
+            style={`--width: ${imageData.width}; --height: ${imageData.height};`}
+            href={imageData.src}
+            target="_blank"
+            data-fancybox="gallery"
+          >
+            <Image
+              class="h-32 w-32 object-cover"
+              src={imageData}
+              alt={`Testimonial ${index + 1}`}
+              width={300}
+              height={200}
+            />
+          </a>
+        );
+      })
+    }
+  </div>
+</section>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+
+  Fancybox.bind("[data-fancybox]", {
+    theme: "auto",
+    mainStyle: {
+      "--f-button-width": "44px",
+      "--f-button-height": "44px",
+      "--f-button-border-radius": "50%",
+      "--f-toolbar-padding": "16px",
+    },
+    Carousel: {
+      Arrows: false,
+      Toolbar: {
+        display: {
+          left: [],
+          middle: [],
+          right: ["close"],
+        },
+      },
+      transition: "slide",
+    },
+  });
+</script>

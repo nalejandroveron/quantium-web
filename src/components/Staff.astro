@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import nicoCortez from "../assets/staff/nico_cortez.jpeg";
+import mauricioOchoa from "../assets/staff/mauricio_ochoa.jpeg";
+import victorValiente from "../assets/staff/victor_valiente.jpeg";
+
+const staff = [
+  {
+    name: "Victor Valiente",
+    img: victorValiente,
+    desc: `Valiente Víctor es analista financiero con más de ocho años de experiencia en mercados globales, especializado en microestructura, Dark Pools, derivados y flujos institucionales. Licenciado en Comunicación, destaca por su habilidad para traducir datos complejos en estrategias claras y aplicables. Cuenta con certificaciones en gestión de negocios físicos y digitales, experiencia como speaker en criptomonedas e innovación, y trayectoria como creador y director de empresas. Es gestor de capital en futuros y CFDs con enfoque cuantitativo, analista de datos macroeconómicos y referente en redes dentro del ámbito económico y especulativo. Su trabajo integra análisis institucional, narrativa estratégica y educación real para acercar a los traders a la forma profesional en que operan las instituciones.`,
+  },
+  {
+    name: "Mauricio Ochoa",
+    img: mauricioOchoa,
+    desc: `Mauricio es Trader y Formador, especializado en derivados financieros, microestructura y análisis cuantitativo aplicado al mercado institucional. Licenciado en Management y Técnico Superior en Marketing Empresarial por la Universidad Siglo XXI, combina formación académica sólida con experiencia práctica en mercados de alta volatilidad. Es profesional en Order Flow Data Level 2 y analista cuantitativo enfocado en opciones financieras, integrando modelos de volatilidad, flujo institucional, gamma exposure y estructura probabilística para desarrollar lecturas precisas y sistemáticas del mercado. Su enfoque une gestión del riesgo, metodología profesional y pedagogía clara para formar traders con visión institucional y toma de decisiones basada en datos.`,
+  },
+  {
+    name: "Nicolás Cortéz",
+    img: nicoCortez,
+    desc: "Nicolás es operador técnico desde 2013, especializado en CFDs, criptomonedas e índices estadounidenses. Su enfoque se basa en análisis técnico avanzado, gestión disciplinada del riesgo y ejecución estructurada. Domina el EUR/USD en CFDs, BTC en criptomonedas y centra la mayor parte de su operativa en el NASDAQ, analizando su comportamiento con profundidad. Complementa su trading con análisis fundamental y lectura macroeconómica para integrar contexto y precisión en la toma de decisiones. Actualmente se encuentra perfeccionándose en data cuantitativa de nivel 3, incorporando métricas estadísticas, flujo institucional y modelos probabilísticos para profesionalizar aún más su metodología y operar con una visión basada en datos.",
+  },
+];
+---
+
+<div class="py-24 sm:py-32 bg-gray-900">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:max-w-4xl">
+      <h2
+        class="text-4xl text-center font-semibold tracking-tight text-pretty sm:text-5xl text-white"
+      >
+        Nuestro staff
+      </h2>
+      <p class="mt-2 text-center text-lg/8 text-gray-400">
+        Conoce al equipo de profesionales detrás de Quantium que te guiarán en
+        tu camino hacia el éxito en el trading cuantitativo.
+      </p>
+      <div class="mt-16 space-y-20 lg:mt-20">
+        {
+          staff.map((item) => (
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video h-full w-full lg:aspect-square lg:max-w-64 lg:shrink-0">
+                <Image
+                  width="560"
+                  height="315"
+                  src={item.img}
+                  alt={item.name}
+                  class="absolute inset-0 size-full rounded-2xl object-cover bg-gray-800"
+                />
+              </div>
+              <div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-3xl font-semibold text-white group-hover:text-gray-300">
+                    {item.name}
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-400">{item.desc}</p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

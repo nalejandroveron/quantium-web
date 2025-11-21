@@ -10,9 +10,14 @@ const images = Object.values(
 );
 ---
 
-<section class="py-24 sm:py-32 w-full bg-gray-900">
+<section class="w-full flex flex-col gap-24 bg-gray-900">
+  <h2
+    class="text-4xl text-center font-semibold tracking-tight text-pretty sm:text-5xl text-white"
+  >
+    Testimonios de nuestros estudiantes
+  </h2>
   <div
-    class="flex flex-row flex-wrap justify-center gap-5 px-32 min-w-0 w-full"
+    class="flex flex-row flex-wrap justify-center gap-5 px-4 lg:px-32 min-w-0 w-full"
   >
     {
       Object.entries(images).map(async ([_path, image], index) => {

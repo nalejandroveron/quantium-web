@@ -8,9 +8,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nalejandroveron.github.io/',
-  base: process.env.CI ? '/quantium-web' : undefined,
-
+  site: 'http://quantium-trading.com',
   vite: {
     plugins: [tailwindcss()],
   },
